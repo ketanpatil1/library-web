@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Library</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="js/script.js" defer></script>
+    </head>
+    <body>
+        <h1>Library</h1>
+
+        <div class="actions">
+            <button class="refresh-button">Refresh</button>
+            <button class="add-button">+ Add Book</button>
+        </div>
+        <div class="grid-container">
+
+        </div>
+        <dialog>
+            <button autofocus><img src="./icons/x.svg"></button>
+            <img src="" alt="" />
+            <form>
+                <label>
+                    Title:
+                    <input type="text" id="new-title" required />
+                </label>
+                <label>
+                    Author:
+                    <input type="text" id="new-author" required />
+                </label>
+                <label>
+                    No. of Pages:
+                    <input type="number" min="1" id="new-pages" required />
+                </label>
+                <label class="row">
+                    Read status:
+                    <div>
+                        <input type="radio" id="new-read-read" name="read-status" value="true" checked/>
+                        <label for="new-read-read">Read</label>
+                        <input type="radio" id="new-read-unread" name="read-status" value="false"/>
+                        <label for="new-read-unread">Unread</label>
+                    </div>
+                </label>
+                <button type="submit" id="add-book-btn">Add Book</button>
+            </form>
+        </dialog>
+    </body>
+</html>

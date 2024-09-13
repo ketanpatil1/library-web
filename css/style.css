@@ -1,0 +1,162 @@
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    width: 80%;
+}
+
+h1 {
+    text-align: center;
+    padding: 32px;
+    font-size: 48px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    margin: 12px 0;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    > button {
+        background-color: royalblue;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 10px;
+        font-size: 20px;
+
+        img {
+            height: 49px;
+            color: white;
+        }
+    }
+}
+
+.grid-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+
+.book-card {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 16px;
+    gap: 16px;
+    border-radius: 12px;
+    border-left: 12px solid skyblue;
+    background-color: azure;
+    box-shadow: 5px 5px 10px rgb(211, 211, 234);
+
+    .bookIcon {
+        width: 150px;
+        height: 150px;
+        flex-shrink: 0;
+    }
+
+    .bookInfo > p {
+        padding: 5px 0;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    button {
+        color: #eeeeee;
+        padding: 8px 16px;
+        border-radius: 10px;
+        margin-right: 8px;
+    }
+
+    .delete-btn {
+        background-color: #ee6666;
+    }
+    .read-btn {
+        &.read {
+            background-color: #667722;
+        }
+        &.unread {
+            background-color: #33aa66;
+        }
+    }
+}
+
+dialog {
+    margin: auto;
+    border-left: 12px solid skyblue;
+    border-radius: 12px;
+    padding: 24px;
+    width: min(70%, 500px);
+    background-color: white;
+
+    > button {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: transparent;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 16px;
+
+        label {
+            min-width: 100px;
+            font-size: 20px;
+
+            input {
+                display: block;
+                border: 1px solid lightgray;
+                border-radius: 8px;
+                height: 40px;
+                width: 100%;
+                padding: 8px;
+                font-size: 20px;
+            }
+
+            input[type=number]::-webkit-inner-spin-button,
+            input[type=number]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            input[type=number] {
+                -moz-appearance:textfield;
+            }
+
+
+            input[type=radio] {
+                height: 20px;
+                width: 20px;
+                margin-right: 8px;
+                flex: 0;
+            }
+            &.row > div {
+                display: flex;
+                /* justify-content: start; */
+                align-items: center;
+            }
+            &.row label {
+                font-size: 16px;
+            }
+        }
+
+        button {
+            background-color: royalblue;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+    }
+}
