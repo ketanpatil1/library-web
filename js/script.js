@@ -31,22 +31,22 @@ function displayLibrary() {
 
 const gridContainer = document.querySelector(".grid-container");
 function displayBook(book) {
-    let bookCard = document.createElement("div");
+    const bookCard = document.createElement("div");
     bookCard.classList.add("book-card");
 
-    let cardIcon = document.createElement("div");
+    const cardIcon = document.createElement("div");
     cardIcon.classList.add("bookIcon");
-    let cardContent = document.createElement("div");
+    const cardContent = document.createElement("div");
     cardContent.classList.add("bookInfo");
 
-    let title = document.createElement("p");
-    let author = document.createElement("p");
-    let pages = document.createElement("p");
-    let read = document.createElement("p");
+    const title = document.createElement("p");
+    const author = document.createElement("p");
+    const pages = document.createElement("p");
+    const read = document.createElement("p");
 
-    let deleteBtn = document.createElement("button");
+    const deleteBtn = document.createElement("button");
     deleteBtn.classList.add("delete-btn");
-    let readBtn = document.createElement("button");
+    const readBtn = document.createElement("button");
     readBtn.classList.add("read-btn");
     if (book.read) {
         readBtn.classList.add("read");
