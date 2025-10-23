@@ -7,10 +7,6 @@ function Book(title, author, pages, read) {
     this.read = read;
     this.index = myLibrary.length;
 
-    this.info = function () {
-        return `${title} by ${author}, ${pages} pages, ${!read ? "not read yet": "read"}`
-    };
-
     addBookToLibrary(this);
 }
 
