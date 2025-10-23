@@ -1,6 +1,6 @@
 const myLibrary = [];
 
-function Book (title, author, pages, read) {
+function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -16,7 +16,7 @@ function Book (title, author, pages, read) {
 
 Book.prototype.toggleRead = function () {
     this.read = !this.read;
-}
+};
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
@@ -57,19 +57,19 @@ function displayBook(book) {
     title.innerText = book.title;
     author.innerText = `by ${book.author}`;
     pages.innerText = `${book.pages} pages`;
-    read.innerText = `${!book.read ? "Not read yet": "Read"}`;
+    read.innerText = `${!book.read ? "Not read yet" : "Read"}`;
     deleteBtn.innerText = "Delete";
-    readBtn.innerText = `${book.read ? "Mark as unread": "Mark as read"}`;
+    readBtn.innerText = `${book.read ? "Mark as unread" : "Mark as read"}`;
 
     deleteBtn.addEventListener("click", () => {
         delete myLibrary[book.index];
         displayLibrary();
-    })
+    });
 
     readBtn.addEventListener("click", () => {
         book.toggleRead();
         displayLibrary();
-    })
+    });
 
     title.classList.add("title");
 
@@ -84,12 +84,42 @@ function displayBook(book) {
     gridContainer.appendChild(bookCard);
 }
 
-const book1 = new Book("The Linux Command Line", "William Shotts", 555, true);
-const book2 = new Book("Adventures with the Linux Command Line", "William Shotts", 263, false);
-const book3 = new Book("Pro Git", "Scott Chacon and Ben Straub", 501, false);
-const book4 = new Book("Warriors: Into The Wild", "Erin Hunter", 160, true);
-const book5 = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
-const book6 = new Book("50 Tips to improve User Interface", "Victor Ponamariov", 59, true);
+const book1 = new Book(
+    "The Linux Command Line",
+    "William Shotts",
+    555,
+    true,
+);
+const book2 = new Book(
+    "Adventures with the Linux Command Line",
+    "William Shotts",
+    263,
+    false,
+);
+const book3 = new Book(
+    "Pro Git",
+    "Scott Chacon and Ben Straub",
+    501,
+    false,
+);
+const book4 = new Book(
+    "Warriors: Into The Wild",
+    "Erin Hunter",
+    160,
+    true,
+);
+const book5 = new Book(
+    "The Hobbit",
+    "J.R.R. Tolkien",
+    295,
+    false,
+);
+const book6 = new Book(
+    "50 Tips to improve User Interface",
+    "Victor Ponamariov",
+    59,
+    true,
+);
 
 displayLibrary();
 
@@ -99,11 +129,11 @@ const closeModalBtn = document.querySelector("dialog button");
 
 addBookBtn.addEventListener("click", () => {
     addBookModal.showModal();
-})
+});
 
 closeModalBtn.addEventListener("click", () => {
     addBookModal.close();
-})
+});
 
 const newTitle = document.querySelector("#new-title");
 const newAuthor = document.querySelector("#new-author");
@@ -127,7 +157,7 @@ newBookBtn.addEventListener("click", () => {
     } else {
         alert("Form invalid");
     }
-})
+});
 
 function checkFormValidity() {
     if (
@@ -148,4 +178,4 @@ function resetFormFields() {
 }
 
 const refreshBtn = document.querySelector(".refresh-button");
-refreshBtn.addEventListener("click", displayLibrary())
+refreshBtn.addEventListener("click", displayLibrary());
